@@ -1,0 +1,22 @@
+<!-- bootstrap4 files -->
+{% load bootstrap4 %}
+<!-- static files -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    <!-- Nav bar -->
+    {% include 'nav.html'%}
+    <!-- Other Pages -->
+    {% block content %} {% endblock %}
+  </body>
+</html>
