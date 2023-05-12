@@ -16,7 +16,7 @@ import os
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,8 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ru_a!hiecj5j%*=&76is5oti09u23&0!xc#r(kvy6)9ca4)290'
-
+SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -49,12 +48,19 @@ INSTALLED_APPS = [
 ]
 
 #  Config
+# cloudinary.config(
+#     cloud_name="dlepgnfkx",
+#     api_key="424572295272249",
+#     api_secret="mIqzJWsrduxe9AzoTNzs9f-1ACU",
+#     secure=True
+# )
 cloudinary.config(
-    cloud_name="dlepgnfkx",
-    api_key="424572295272249",
-    api_secret="mIqzJWsrduxe9AzoTNzs9f-1ACU",
-    secure=True
+    cloud_name=config('CLOUDINARY_NAME'),
+    api_key=config('CLOUDINARY_API'),
+    api_secret=config('CLOUDINARY_SECRET_KEY'),
+    secure=config('CD_SECURE')
 )
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
