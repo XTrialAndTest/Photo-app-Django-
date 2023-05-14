@@ -153,3 +153,7 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+AUTHENTICATION_BACKENDS = [
+    'myapp.backends.CustomAuthBackend',
+    'django.contrib.auth.backends.ModelBackend',  # Default authentication backend
+]

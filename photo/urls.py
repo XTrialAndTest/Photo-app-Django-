@@ -13,6 +13,11 @@ urlpatterns = [
     # single page photo
     path('single/<str:pk>', views.single, name='single'),
 
+    path('login/', views.login_view, name='login'),
+    path('email', views.subscribe, name='email'),
+    path('like/<str:pk>', views.like, name='like'),
+    path('dislike/<str:pk>', views.dislike, name='dislike'),
+
 
 
 

@@ -18,7 +18,16 @@ class Photo(models.Model):
     tags = models.CharField(
 
         max_length=200, choices=CHOICE, default='photo')
+    like = models.IntegerField(default=0)
+    dislike = models.IntegerField(default=0)
     date = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return self.title
+
+
+class EmailForm(models.Model):
+    email = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.email
