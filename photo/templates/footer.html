@@ -8,7 +8,7 @@
       <div class="email"><div class="container">
  
   <div>
-   <form action="{% url 'email' %}" method="post" class="footer-subscribe w-50 mx-auto ">
+   <form action="{% url 'email' %}" method="post" class="footer-subscribe w-75 mx-auto ">
             {% csrf_token %}
             <div class="input-group mb-3">
               <input type="email" name="email" class="form-control mr-2 border-secondary text-white bg-transparent" required placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
