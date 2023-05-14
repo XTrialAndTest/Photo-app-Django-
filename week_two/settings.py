@@ -97,17 +97,21 @@ WSGI_APPLICATION = 'week_two.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'photo',
+#         'USER': 'root',
+#         'PASSWORD': '0000@Mush#123',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'photo',
-        'USER': 'root',
-        'PASSWORD': '0000@Mush#123',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
+    'default': dj_database_url.parse(config('POST_KEY'))
 
+
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
