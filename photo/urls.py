@@ -15,8 +15,8 @@ urlpatterns = [
 
     path('login/', views.login_view, name='login'),
     path('email', views.subscribe, name='email'),
-    # path('like/<str:pk>', views.like, name='like'),
-    # path('dislike/<str:pk>', views.dislike, name='dislike'),
+    path('like/<str:pk>', views.like, name='like'),
+    path('dislike/<str:pk>', views.dislike, name='dislike'),
 
 
 
