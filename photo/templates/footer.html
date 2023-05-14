@@ -6,18 +6,14 @@
     <div class="text-center p-3 ml-2" style="background-color: rgba(109, 77, 169, 0.338)">
       
       <div class="email"><div class="container">
-  <h1>hello</h1>
-  {% for i in count%}
-  <li>i</li>
-
-  {% endfor %}
+ 
   <div>
-   <form action="{% url 'email' %}" method="post" class="footer-subscribe">
+   <form action="{% url 'email' %}" method="post" class="footer-subscribe w-50 mx-auto ">
             {% csrf_token %}
             <div class="input-group mb-3">
-              <input type="email" name="email" class="form-control border-secondary text-white bg-transparent" required placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+              <input type="email" name="email" class="form-control mr-2 border-secondary text-white bg-transparent" required placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
               <div class="input-group-append">
-                <button class="btn btn-primary text-black" type="submit" id="button-addon2">Send</button>
+                <button class="btn btn-primary " type="submit" id="button-addon2">Send</button>
               </div>
             </div>
           </form>
