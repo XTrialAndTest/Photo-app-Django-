@@ -87,11 +87,7 @@ def dislike(request, pk):
     data = Photo.objects.get(pk=pk)
 
     if request.method == 'POST':
-        # for i in data:
-        #     newlike = int(like)+1
-
-        # like.update(newlike)
-        # print(Photo.objects.filter(pk=pk))
+       
 
         data.dislike = data.dislike+1
         data.save()
